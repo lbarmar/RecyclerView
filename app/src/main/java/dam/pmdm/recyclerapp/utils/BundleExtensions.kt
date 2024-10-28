@@ -1,4 +1,4 @@
-package dam.pmdm.recyclerapp
+package dam.pmdm.recyclerapp.utils
 
 import android.os.Bundle
 import dam.pmdm.recyclerapp.models.GameData

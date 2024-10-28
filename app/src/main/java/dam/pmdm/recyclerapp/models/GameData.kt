@@ -8,3 +8,6 @@ data class GameData(
     val platforms: String
 )
 
+data class GameResponse(
+    val games: List<GameData>
+)
