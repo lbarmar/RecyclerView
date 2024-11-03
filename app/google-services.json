@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "370874100704",
+    "project_id": "supermarioapp-12b53",
+    "storage_bucket": "supermarioapp-12b53.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370874100704:android:82873dca4cfadb68df9985",
+        "android_client_info": {
+          "package_name": "dam.pmdm.recyclerapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPA3Np1k-_VogAsDnXH5rUDJ65YPm4lxw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

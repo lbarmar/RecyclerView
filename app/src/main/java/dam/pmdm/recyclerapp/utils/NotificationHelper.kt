@@ -6,7 +6,9 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.util.Log
 import androidx.core.app.NotificationCompat
+import com.google.firebase.messaging.FirebaseMessaging
 import dam.pmdm.recyclerapp.R
 import dam.pmdm.recyclerapp.activities.MainActivity
 
@@ -50,5 +52,34 @@ class NotificationHelper(private val context: Context) {
 
         val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(NotificationConstants.NOTIFICATION_ID, notification)
+    }
+
+    fun getToken() {
+        FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w("FCM Token", "Fetching FCM registration token failed", task.exception)
+                return@addOnCompleteListener
+            }
+
+            // Obtiene el token
+            val token = task.result
+            Log.d("FCM Token", "Token: $token")
+            // Aquí puedes enviar el token a tu servidor si es necesario
+//            sendTokenToServer(token)
+        }
+    }
+
+    // Nueva función para la suscripción a un tema
+    fun subscribeToTopic(topic: String) {
+        FirebaseMessaging.getInstance().subscribeToTopic(topic)
+            .addOnCompleteListener { task ->
+                val msg = if (task.isSuccessful) {
+                    "Suscripción exitosa al tema: $topic"
+                } else {
+                    "Error al suscribirse al tema: $topic"
+                }
+                Log.d("FCM Subscription", msg)
+
+            }
     }
 }

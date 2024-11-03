@@ -55,6 +55,10 @@ class MainActivity : AppCompatActivity() {
         NotificationHelper(this).apply {
             createNotificationChannel()
             lifecycleScope.launch {
+                getToken()
+                // Suscribirse a un tema
+                subscribeToTopic("super_mario_updates")
+
                 delay(5000) // Pausar durante 5 segundos
                 showGameNotification("¡Hola, Jugador!", "¡Echa un vistazo al nuevo juego de Super Mario!")
             }
