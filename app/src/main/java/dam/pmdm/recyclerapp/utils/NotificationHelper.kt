@@ -10,7 +10,13 @@ import androidx.core.app.NotificationCompat
 import dam.pmdm.recyclerapp.R
 import dam.pmdm.recyclerapp.activities.MainActivity
 
-// En tu clase NotificationHelper
+object NotificationConstants {
+    const val CHANNEL_ID = "super_mario_push_channel"
+    const val CHANNEL_NAME = "Super Mario Notifications"
+    const val CHANNEL_DESCRIPTION = "Notificaciones para la app de Super Mario"
+    const val NOTIFICATION_ID = 1002
+}
+
 class NotificationHelper(private val context: Context) {
 
     fun createNotificationChannel() {
